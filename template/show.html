@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarization</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+
+        main {
+            background: linear-gradient(45deg, red, green, yellow, blue);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: calc(100% - 20px);
+            width: calc(100% - 20px);
+        }
+
+
+
+        .container {
+            height: calc(95% - 10px);
+            width: calc(98% - 10px);
+            border: 0px solid black;
+            position: relative;
+            z-index: 20;
+            backdrop-filter: blur(500px);
+            background-color: rgb(119, 200, 241);
+            box-shadow: 5px 5px 50px black;
+            overflow: auto;
+            display: flex;
+            gap: 50px;
+        }
+
+        input[type=submit] {
+            background-color: orange;
+            border: none;
+            outline: none;
+            padding: 10px 40px;
+            border-radius: 5px;
+            cursor: pointer;
+
+        }
+
+        input[type=file] {
+            border: 1px solid black;
+            background-color: grey;
+            width: 80%;
+            height: 50px;
+            font-size: 36px;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: space-around;
+            align-content: space-evenly;
+            height: 100%;
+        }
+
+        .textareas {
+            width: 50%;
+        }
+
+        .textarea {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 25px;
+
+            & textarea {
+                width: 400px;
+            }
+        }
+
+        .images {
+            width: 50%;
+        }
+        img{
+            width: 100%;
+            height: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+
+            <div class="textareas">
+
+                <div class="textarea">
+                    <label>TF-IDF:</label> <textarea name="" id="" cols="30" rows="10">{{tfidf}}</textarea>
+                </div>
+                <div class="textarea">
+                    <label>KL SUM:</label> <textarea name="" id="" cols="30" rows="10">{{klsum}}</textarea>
+                </div>
+
+                <div class="textarea">
+                    <label>LEX RANK:</label> <textarea name="" id="" cols="30" rows="10">{{lexrank}}</textarea>
+                </div>
+
+                <div class="textarea">
+                    <label>LSA :</label> <textarea name="" id="" cols="30" rows="10">{{lsa}}</textarea>
+                </div>
+            </div>
+            <div class="images">
+                <img src="{% static 'Character_Count_Comparison.png' %}">
+                <img src="{% static 'Word_Count_Comparison.png' %}">
+            </div>
+        </div>
+    </main>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarization</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+
+        main {
+            background: linear-gradient(45deg, red, green, yellow, blue);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: calc(100% - 20px);
+            width: calc(100% - 20px);
+        }
+
+        
+
+        .container {
+            height: 200px;
+            width: 600px;
+            border: 0px solid black;
+            position: relative;
+            z-index: 20;
+            backdrop-filter: blur(500px);
+            background-color: rgb(119, 200, 241);
+            box-shadow: 5px 5px 50px black;
+        }
+        
+        input[type=submit]{
+            background-color: orange;
+            border: none;
+            outline: none;
+            padding: 10px 40px;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        input[type=file]{
+            border: 1px solid black;
+            background-color: grey;
+            width: 80%;
+            height: 50px;
+            font-size: 36px;
+        }
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: space-around;          
+            align-content: space-evenly;
+            height: 100%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                
+                <input type="file" name="file" id="fileBox" multiple>
+                <input type="submit" value="submit">
+            </form>
+        </div>
+    </main>
+
+    
+
+</body>
+
+</html>
